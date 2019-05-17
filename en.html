@@ -1,0 +1,1201 @@
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+		<title>Home - Fantube</title>
+		<link rel="icon" href="bundles/app/images/favicon.png" type="image/png"/>
+		<link href="bundles/app/css/styles.css" rel="stylesheet">
+		<meta name="description" content="Fantube enables people worldwide to surprise a fan with a personalized video message from his/her favorite artist and by doing so, to raise awareness and funds for a charity. Each artist can choose the price of a video: free, fixed or online auction and decides which charity he/she wants to support."/>
+		<meta property="og:title" content="Home - Fantube" />
+		<meta property="og:url" content="https://www.fantube.me/en/">
+				<meta property="og:image" content="https://www.fantube.me/bundles/app/images/share.jpg" />
+		<meta property="og:image:secure_url" content="https://www.fantube.me/bundles/app/images/share.jpg" />
+				<meta property="og:site_name" content="Fantube" />
+			<link rel="alternate" href="en.html" hreflang="en" />
+			<link rel="alternate" href="/nl/" hreflang="nl" />
+			<link rel="alternate" href="/de/" hreflang="de" />
+			<link rel="alternate" href="/pt/" hreflang="pt" />
+			<link rel="alternate" href="/fr/" hreflang="fr" />
+			<link rel="alternate" href="/it/" hreflang="it" />
+			<link rel="alternate" href="/es/" hreflang="ed" />
+								<script src="ajax/libs/jquery/1-11-2/jquery.min.js"></script>
+			<script src="bundles/app/js/scripts.min.js"></script>
+			<script src="bundles/app/js/socket.js"></script>
+	<script>
+		function startTimer(duration, container) {
+			var timer = duration;
+			var timeIntervalID = setInterval(function () {
+				days = parseInt(timer / 60 / 60 / 24, 10)
+				hours = parseInt((timer - days*60*60*24)  / 60 / 60, 10)
+				minutes = parseInt((timer - days*60*60*24 - hours*60*60) / 60 , 10)
+				seconds = parseInt(timer % 60, 10);
+				minutes = minutes < 10 ? "0" + minutes : minutes;
+				seconds = seconds < 10 ? "0" + seconds : seconds;
+				$('#'+container+' .d').html(days);
+				$('#'+container+' .h').html(hours);
+				$('#'+container+' .m').html(minutes);
+				$('#'+container+' .s').html(seconds);
+				if(days == 0){
+					$('#'+container+' .day_container').hide();
+				}
+				if (--timer < 0) {
+					timer = 0;
+					if (timer == 0) {
+						clearInterval(timeIntervalID);
+ 						$('#'+container).empty();
+					}
+				}
+			}, 1000);
+			$('#'+container).attr('timeIntervalID', timeIntervalID);
+		}
+	</script>
+		<!-- Hotjar Tracking Code for www.fantube.me -->
+		<script>
+		    (function(h,o,t,j,a,r){
+		        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+		        h._hjSettings={hjid:588751,hjsv:5};
+		        a=o.getElementsByTagName('head')[0];
+		        r=o.createElement('script');r.async=1;
+		        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+		        a.appendChild(r);
+		    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+		var userLang = navigator.language || navigator.userLanguage;
+		function setCookie(cname, cvalue, exdays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			var expires = "expires="+d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+		var localeChecked = getCookie("localeChecked");
+							if(userLang == 'nl' && localeChecked == ''){
+				setCookie("localeChecked", 'true', 1);
+			}
+							if(userLang == 'de' && localeChecked == ''){
+				setCookie("localeChecked", 'true', 1);
+			}
+				if(userLang == 'fr' && localeChecked == ''){
+			setCookie("localeChecked", 'true', 1);
+		}
+						if(userLang == 'it' && localeChecked == ''){
+			setCookie("localeChecked", 'true', 1);
+		}
+						if(userLang == 'es' && localeChecked == ''){
+			setCookie("localeChecked", 'true', 1);
+		}
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+							(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+						m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+						ga('create', 'UA-100078581-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+					<nav class="topbar">
+				<div class="topbar__col topbar__col--1">
+					<a href="en.html" class="logo">
+						<img src="/bundles/app/images/logo.svg" class="logo__image">
+					</a>
+				</div>
+				<div class="topbar__col topbar__col--2">
+					<form action="index.html" class="search__form" method="post">
+						<input type="search" name="search" class="search__input" placeholder="Search artist" value="">
+						<button type="submit" class="search__button"></button>
+					</form>
+				</div>
+				<div class="topbar__col topbar__col--3">
+					<ul class="navigation">
+						<li class="navigation__item"><a class="navigation__link " href="en/how-it-works.html">How it works</a></li>
+						<li class="navigation__item"><a class="navigation__link " href="en/brands.html">Brands</a></li>
+						<li class="navigation__item"><a class="navigation__link " href="en/all-artists.html">All artists</a></li>
+						<li class="navigation__item"><a class="navigation__link " href="en/charities.html">Charities</a></li>
+													<li class="navigation__item navigation__item--mobile">
+								<a href="en/user/login.html" class="navigation__button navigation__button--login">Login</a>
+							</li>
+											</ul>
+				</div>
+			</nav>
+	<div class="videomask__wrapper">
+	<div class="videomask__overlay"></div>
+	<div class="videomask__inner">
+		<video autoplay loop muted>
+							<source src="http://lb-vixy-vod.cdn.streamgate.nl/vixy/p/364/sp/364000/0_05ui91bk/2/0_9u3bqlp1.mp4" type="video/mp4">
+					</video>
+		<div class="videomask__image-inner">
+			<img src="bundles/app/images/phone.jpg" alt="" class="videomask__image">
+		</div>
+	</div>
+</div>
+<section class="hero hero--phone">
+	<div class="hero__caption">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-8 col-md-offset-1 col-lg-6 col-lg-offset-1 bidding-container">
+																<h1>Surprise someone with a personal video from their favorite artist</h1>
+						<p class="hero__paragraph"></p>
+						<a href="en/all-artists.html" class="button">Get yours!</a>
+									</div>
+			</div>
+		</div>
+	</div>
+			<div class="hero__image" style="background-image:url(uploads/artist_cover_picture/ArminvanBuuren_Miami_Show_33_Socials.jpg)"></div>
+</section>
+<section class="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+			<h2 class="no-margin">Discover all artists on Fantube</h2>
+			<div class="artists carousel">
+				<div class="carousel__spacer"></div>
+								<div class="artist__col">
+					<a href="en/artist/armin-van-buuren.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_05ui91bk?sec=13')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Armin van Buuren</h4>
+							<div class="artist__category">🔊&nbsp;&nbsp;DJ</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="en/artist/lost-frequencies.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_8optplo2')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Lost Frequencies</h4>
+							<div class="artist__category">🔊&nbsp;&nbsp;DJ</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="en/artist/remy-bonjasky.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_j5u1dc2x?sec=5')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Remy Bonjasky</h4>
+							<div class="artist__category">🥊&nbsp;&nbsp;K1</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_w1on14e7?sec=1')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Tony Junior</h4>
+							<div class="artist__category">🔊&nbsp;&nbsp;DJ</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_54donihq?sec=9')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Julien Geloen</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_u4zgmva9?sec=25')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Najib Amhali</h4>
+							<div class="artist__category">😂&nbsp;&nbsp;Comedian</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_eklrc4rs?sec=16')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Dirk Kuyt</h4>
+							<div class="artist__category">⚽&nbsp;&nbsp;Soccer</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_053v8x7g?sec=33')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">BraboNeger</h4>
+							<div class="artist__category">😂&nbsp;&nbsp;Comedian</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_xzcmns6y')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Andy van der Meyde</h4>
+							<div class="artist__category">🏆&nbsp;&nbsp;Sport</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_dqwi09i8?sec=12')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Ezra Walian</h4>
+							<div class="artist__category">⚽&nbsp;&nbsp;Soccer</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_drc41jvz')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Edwin van der Sar</h4>
+							<div class="artist__category">⚽&nbsp;&nbsp;Soccer</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_n4xky0s9?sec=15')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">NikkieTutorials</h4>
+							<div class="artist__category">💅&nbsp;&nbsp;Make-up</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_0rvdsay8?sec=15')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Paola Maria</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_4oruq23m')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Dannic</h4>
+							<div class="artist__category">🔊&nbsp;&nbsp;DJ</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_rg3jld4o?sec=21')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">QUINTINO</h4>
+							<div class="artist__category">🔊&nbsp;&nbsp;DJ</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_0z5uking?sec=15')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">DNPNL</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_3flhe2kl')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Luca Gilliot</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_47eji055')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Nienke Plas</h4>
+							<div class="artist__category">😂&nbsp;&nbsp;Comedian</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_sljm6hj9?sec=7')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Milo</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_hm7ujngh')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Royalistiq</h4>
+							<div class="artist__category">🎮&nbsp;&nbsp;Gaming</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_t07owt7a?sec=8')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">KingAlert</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_0qzyy3tt?sec=17')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Smiley</h4>
+							<div class="artist__category">🎤&nbsp;&nbsp;Music</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_btfe64tj?sec=27')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Jebroer</h4>
+							<div class="artist__category">🎤&nbsp;&nbsp;Music</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_ykbuulmm?sec=7')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Milan Carvalho</h4>
+							<div class="artist__category">😎&nbsp;&nbsp;Model</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_vz7ceeef')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Harm</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_t7ri118b?sec=12')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Fifalosophy</h4>
+							<div class="artist__category">🎮&nbsp;&nbsp;Gaming</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_4fl1vq7f')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Obama Look-a-like</h4>
+							<div class="artist__category">😂&nbsp;&nbsp;Comedian</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_rqpyxvnl?sec=26')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Tineke Schouten</h4>
+							<div class="artist__category">😂&nbsp;&nbsp;Comedian</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_q48c8g73?sec=26')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Dylan Haegens</h4>
+							<div class="artist__category">👯&nbsp;&nbsp;Entertainment</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_5h97ybbi?sec=19')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">ItzSyntrax</h4>
+							<div class="artist__category">👯&nbsp;&nbsp;Entertainment</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_wehaued7?sec=8')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Niek Roozen</h4>
+							<div class="artist__category">🎬&nbsp;&nbsp;Actor</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_p8pt9zkt?sec=19')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Jeremy Frieser</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_ehs09ig5?sec=21')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Kim Jung-Un Look-a-like</h4>
+							<div class="artist__category">🎬&nbsp;&nbsp;Actor</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_1i4tu4k8')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Melvin Manhoef</h4>
+							<div class="artist__category">🥊&nbsp;&nbsp;K1</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_k3fzgq2n?sec=8')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Noize Suppressor</h4>
+							<div class="artist__category">🔊&nbsp;&nbsp;DJ</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_ryrn4fuc?sec=6')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">DusDavidGames</h4>
+							<div class="artist__category">🎮&nbsp;&nbsp;Gaming</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_n2f6cxw2?sec=25')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Prankster</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_op2unhxz')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">FC Roelie</h4>
+							<div class="artist__category">🎮&nbsp;&nbsp;Gaming</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_hh0gkgag?sec=35')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">EenGameStad</h4>
+							<div class="artist__category">🎮&nbsp;&nbsp;Gaming</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_4x2a5gra')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Gekke Markie</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_2v9crtmw?sec=61')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">La Melanie</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_ltkxqeq7?sec=24')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Jill van Dooren</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_o1wdikv9')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">JoeyCraig</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_sfx3bnfq')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Bokado</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_brybbbtp?sec=9')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Gewoon Thomas</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_qcs8m9li?sec=1')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Sabrina Putri</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_pwr0c5oj?sec=26')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Glowmovies</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_feohctwm?sec=8')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Gio</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_n8gbzs30?sec=20')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Linktijger</h4>
+							<div class="artist__category">🎮&nbsp;&nbsp;Gaming</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_oo0yplsj?sec=23')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Ronald Vledder</h4>
+							<div class="artist__category">🎮&nbsp;&nbsp;Gaming</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_uxd0bcyb?sec=2')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Lieke Wevers</h4>
+							<div class="artist__category">🏆&nbsp;&nbsp;Sport</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_4m96n70k?sec=18')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Joost Speelt Spellen</h4>
+							<div class="artist__category">🎮&nbsp;&nbsp;Gaming</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_j3jhjw8w?sec=16')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Dodo</h4>
+							<div class="artist__category">🎮&nbsp;&nbsp;Gaming</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_6b3m1l6w')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Hanni Hanna</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_w2wzcmen?sec=14')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Sanne Wevers</h4>
+							<div class="artist__category">🏆&nbsp;&nbsp;Sport</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_m94ti0jg?sec=17')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Ronald Mulder</h4>
+							<div class="artist__category">🏆&nbsp;&nbsp;Sport</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_3rdvhxrc')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Smoare</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_5ul4n24m')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Yarasky</h4>
+							<div class="artist__category">🎮&nbsp;&nbsp;Gaming</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_avdgpbi5?sec=39')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">GameMeneer</h4>
+							<div class="artist__category">🎮&nbsp;&nbsp;Gaming</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_15dp5gog')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">Girlys Blog</h4>
+							<div class="artist__category">👊&nbsp;&nbsp;Social Media</div>
+						</div>
+					</a>
+				</div>
+								<div class="artist__col">
+					<a href="index.html" class="artist__item">
+						<div class="artist__image-wrapper">
+							<div class="artist__image" style="background-image:url('/uploads/video_thumb/0_xdtycogx')"></div>
+						</div>
+						<div class="artist__caption">
+							<h4 class="artist__title">MSSH</h4>
+							<div class="artist__category">🎮&nbsp;&nbsp;Gaming</div>
+						</div>
+					</a>
+				</div>
+								<div class="carousel__spacer"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<a href="en/all-artists.html" class="button button--small">View all artists</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 text-center">
+				<h3>How it works</h3>
+				<p>Fantube is a Personal Media Platform which enables artists all over the world to surprise fans with a personal video and by doing so raising awareness and funds for a charity.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="steps">
+					<div class="step__col">
+						<div class="step__item step__item--1"></div>
+						<div class="step__title">Search artist</div>
+					</div>
+					<div class="step__col">
+						<div class="step__item step__item--2"></div>
+						<div class="step__title">Win or Buy</div>
+					</div>
+					<div class="step__col">
+						<div class="step__item step__item--3"></div>
+						<div class="step__title">Complete request</div>
+					</div>
+					<div class="step__col">
+						<div class="step__item step__item--4"></div>
+						<div class="step__title">Receive video</div>
+					</div>
+					<div class="step__col">
+						<div class="step__item step__item--5"></div>
+						<div class="step__title">Record fan reaction</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<a href="en/how-it-works.html" class="button button--small">Watch video</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<!-- <h3 class="heading__responsive"><span class="heading__responsive--hidden">These are the </span><span class="heading__responsive--visible">first reactions</span> <span class="heading__responsive--hidden">of fans who received a video</span>
+				</h3> -->
+				<h3>Everything for a fans smile</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="reactions">
+					<div class="carousel__spacer"></div>
+										<div class="reactions__col">
+						<div href="" class="reactions__image-wrapper js-modal" fan_image="/uploads/bidding_avatar/13270_YqxjvntgCAl3" video_src="http://lb-vixy-vod.cdn.streamgate.nl/vixy/p/364/sp/364000/0_7ak1ojbq/2/0_mvkz6u35.mp4" fan_name=""  artist_name="Laidback Luke">
+							<div class="reactions__image" style="background-image:url(/uploads/video_thumb/0_7ak1ojbq)"></div>
+						</div>
+						<div class="reactions__caption">
+							<div class="reactions__avatar" style="background-image:url(/uploads/bidding_avatar/13270_YqxjvntgCAl3)"></div>
+							<div class="reactions__info">
+								<strong></strong> about <a href="index.html" class="reactions__link"><strong>Laidback Luke</strong></a>
+																																																			</div>
+						</div>
+					</div>
+										<div class="reactions__col">
+						<div href="" class="reactions__image-wrapper js-modal" fan_image="/uploads/bidding_avatar/8277_idBYc5xWRVwp" video_src="http://lb-vixy-vod.cdn.streamgate.nl/vixy/p/364/sp/364000/0_c80dc45s/2/0_cc3t9k1s.mp4" fan_name="Luc Swinkels"  artist_name="Dylan Haegens">
+							<div class="reactions__image" style="background-image:url(/uploads/video_thumb/0_c80dc45s?sec=23)"></div>
+						</div>
+						<div class="reactions__caption">
+							<div class="reactions__avatar" style="background-image:url(/uploads/bidding_avatar/8277_idBYc5xWRVwp)"></div>
+							<div class="reactions__info">
+								<strong>Luc Swinkels</strong> about <a href="index.html" class="reactions__link"><strong>Dylan Haegens</strong></a>
+																																																			</div>
+						</div>
+					</div>
+										<div class="reactions__col">
+						<div href="" class="reactions__image-wrapper js-modal" fan_image="/uploads/bidding_avatar/350_IZNeBzvfcQob" video_src="http://lb-vixy-vod.cdn.streamgate.nl/vixy/p/364/sp/364000/0_9nc3mirw/2/0_pxcgwad9.mp4" fan_name="Eugene Hendrikx"  artist_name="Lost Frequencies">
+							<div class="reactions__image" style="background-image:url(/uploads/video_thumb/0_9nc3mirw?sec=9)"></div>
+						</div>
+						<div class="reactions__caption">
+							<div class="reactions__avatar" style="background-image:url(/uploads/bidding_avatar/350_IZNeBzvfcQob)"></div>
+							<div class="reactions__info">
+								<strong>Eugene Hendrikx</strong> about <a href="en/artist/lost-frequencies.html" class="reactions__link"><strong>Lost Frequencies</strong></a>
+																																																			</div>
+						</div>
+					</div>
+										<div class="reactions__col">
+						<div href="" class="reactions__image-wrapper js-modal" fan_image="/uploads/bidding_avatar/350_sSxHIvjWBLoF" video_src="http://lb-vixy-vod.cdn.streamgate.nl/vixy/p/364/sp/364000/0_mk47n3qq/2/0_tpq59w3m.mp4" fan_name="Jos Kuijken"  artist_name="Marco van Ginkel">
+							<div class="reactions__image" style="background-image:url(/uploads/video_thumb/0_mk47n3qq?sec=45)"></div>
+						</div>
+						<div class="reactions__caption">
+							<div class="reactions__avatar" style="background-image:url(/uploads/bidding_avatar/350_sSxHIvjWBLoF)"></div>
+							<div class="reactions__info">
+								<strong>Jos Kuijken</strong> about <a href="index.html" class="reactions__link"><strong>Marco van Ginkel</strong></a>
+																																																			</div>
+						</div>
+					</div>
+										<div class="reactions__col">
+						<div href="" class="reactions__image-wrapper js-modal" fan_image="/uploads/bidding_avatar/2095_rdyFzxaovNDO" video_src="http://lb-vixy-vod.cdn.streamgate.nl/vixy/p/364/sp/364000/0_cpnb079k/2/0_waquaybg.mp4" fan_name="Jose Luis Pereda"  artist_name="Armin van Buuren">
+							<div class="reactions__image" style="background-image:url(/uploads/video_thumb/0_cpnb079k?sec=11)"></div>
+						</div>
+						<div class="reactions__caption">
+							<div class="reactions__avatar" style="background-image:url(/uploads/bidding_avatar/2095_rdyFzxaovNDO)"></div>
+							<div class="reactions__info">
+								<strong>Jose Luis Pereda</strong> about <a href="en/artist/armin-van-buuren.html" class="reactions__link"><strong>Armin van Buuren</strong></a>
+																																																			</div>
+						</div>
+					</div>
+										<div class="reactions__col">
+						<div href="" class="reactions__image-wrapper js-modal" fan_image="/uploads/bidding_avatar/3520_ofkS7mDK9l8L" video_src="http://lb-vixy-vod.cdn.streamgate.nl/vixy/p/364/sp/364000/0_cedoumvz/2/0_ur91r55c.mp4" fan_name="Loek Weevers"  artist_name="Ronald Vledder">
+							<div class="reactions__image" style="background-image:url(/uploads/video_thumb/0_cedoumvz)"></div>
+						</div>
+						<div class="reactions__caption">
+							<div class="reactions__avatar" style="background-image:url(/uploads/bidding_avatar/3520_ofkS7mDK9l8L)"></div>
+							<div class="reactions__info">
+								<strong>Loek Weevers</strong> about <a href="index.html" class="reactions__link"><strong>Ronald Vledder</strong></a>
+																																																			</div>
+						</div>
+					</div>
+										<div class="carousel__spacer"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="modal">
+	<div class="modal__close"></div>
+	<div class="modal__inner">
+		<div class="modal__video-wrapper">
+			<video class="modal__video artist__video video" controls requestFullscreen>
+				<source src="" type="video/mp4">
+			</video>
+			<div class="controls video-controls" data-state="hidden">
+				<button type="button" data-state="play" class="artist__video-button video-playpause"></button>
+				<div class="progress">
+					<progress class="video-progress" value="0" min="0">
+						<span class="progress-bar"></span>
+					</progress>
+				</div>
+				<button type="button" data-state="mute" class="artist__video-mute video-mute"></button>
+			</div>
+		</div>
+		<div class="reactions__caption">
+			<div class="reactions__avatar" style="background-image:url('')"></div>
+			<div class="reactions__info">
+				<strong class="fanName">Ruben</strong> about <a href="" class="reactions__link"><strong class="artistName">Hardwell</strong></a>
+				<!--<div class="reactions__stars">
+                        <span class="reactions__star reactions__star--active"></span>
+                        <span class="reactions__star reactions__star--active"></span>
+                        <span class="reactions__star reactions__star--active"></span>
+                        <span class="reactions__star reactions__star--active"></span>
+                        <span class="reactions__star"></span>
+                </div>-->
+			</div>
+		</div>
+	</div>
+</div>
+	<script>
+		$(function() {
+            var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            var isAndroid = navigator.userAgent.toLowerCase().indexOf("android") >= 0;
+            $('.js-modal').on('click', function() {
+				var videoFile = $(this).attr('video_src');
+				var fanName = $(this).attr('fan_name');
+				var artistName = $(this).attr('artist_name');
+				var fanImage = $(this).attr('fan_image');
+				var mainVideo = $('.artist__video:not(.modal__video)').get(0);
+				if (mainVideo) {
+					mainVideo.pause();
+				}
+				$('.modal__video-wrapper + .reactions__caption .fanName').html(fanName);
+				$('.modal__video-wrapper + .reactions__caption .artistName').html(artistName);
+				$('.modal__video-wrapper + .reactions__caption .reactions__avatar').css('background-image', 'url(' + fanImage + ')');
+				var video = $('.modal__video-wrapper video').get(0);
+				videoSrc = $(video).find('source').attr('src', videoFile);
+				video.load();
+                if (isMobile)
+                {
+                    $('.modal .video-controls .video-playpause').click();
+                    if (!isAndroid) {
+                        return;
+                    }
+                    $(document).on('webkitfullscreenchange', function() {
+                        if (document.webkitIsFullScreen === false || document.mozFullScreen === false || document.msFullscreenElement === false)
+                        {
+                            var video = $('.modal .video').get(0);
+                            if (!video.paused && !video.ended) {
+                                $('.modal .video-controls .video-playpause').click();
+                            }
+                            $('.modal').removeClass('modal--active');
+                        }
+                    });
+                }
+                else {
+                	video.play();
+                }
+				$('.modal').addClass('modal--active');
+                $('.modal__close').off('click').on('click', function(){
+                    $('.modal').removeClass('modal--active');
+					video.pause();
+                });
+            });
+        });
+	</script>
+<section class="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-offset-3 col-sm-6 text-center mobile-margin">
+				<h3>💪 Is your personal hero missing?</h3>
+<p>Request the artist here and we will get in touch with him/her</p>
+<!--<ul class="image-stack">
+					<li class="image-stack__item" style="background-image:url(bundles/app/images/demo/armin.jpg)"></li>
+					<li class="image-stack__item" style="background-image:url(bundles/app/images/demo/jochem.jpg)"></li>
+					<li class="image-stack__item" style="background-image:url(bundles/app/images/demo/lil.jpg)"></li>
+					<li class="image-stack__item" style="background-image:url(bundles/app/images/demo/verstappen.jpg)"></li>
+				</ul>
+				<a href="/en/hero-missing" class="button button--ghost">Let us know</a>-->
+	<a href="en/user/login.html" class="artist__button artist__button--login">Login</a>
+<script>
+	$(function() {
+		$( "#let_us_know" ).click(function() {
+			if($('#artistName').val() == ''){
+				return;
+			}
+			var form = $(this).closest( "form" );
+			var url = $(form).attr('action');
+			$.post( url, $( form ).serialize(), function( data ) {
+				if(data.success == false){
+					$.each(data.message, function( index, value ) {
+						$(form).find('.card__error').html('⚠️ &nbsp;'+value);
+					});
+				}else{
+					$('#artistName').val('');
+					$(form).find('.card__success').html('✅ &nbsp;'+data.message);
+				}
+			}, "json");
+		});
+	});
+</script>			</div>
+			<!-- <div class="col-xs-12 col-sm-6 text-center">
+				<h3>📰 Stay tuned!</h3>
+				<p>We will let you know when new artists join us.</p>
+				<form class="form form--content" action="/en/user/staytuned" method="post" onkeypress="return event.keyCode != 13;">
+					<div class="card__error"></div><div class="card__success"></div>
+					<input class="form__input" type="email" name="stay_tuned_email" id="stay_tuned_email" placeholder="i.e. example@mymail.com">
+					<a class="button button--ghost" id="staytunedBtn">Subscribe</a>
+				</form>
+			</div> -->
+		</div>
+	</div>
+</section>
+<script>
+	$(function() {
+		$( "#staytunedBtn" ).click(function() {
+			if($('#stay_tuned_email').val() == ''){
+				return;
+			}
+			var form = $(this).closest( "form" );
+			var url = $(form).attr('action');
+			$.post( url, $( form ).serialize(), function( data ) {
+				console.log(data);
+				if(data.success == false){
+					$.each(data.message, function( index, value ) {
+						$(form).find('.card__error').html('⚠️ &nbsp;'+value);
+					});
+				}else{
+					$(form).find('.card__success').html('✅ &nbsp;'+data.message);
+				}
+				}, "json");
+			});
+	});
+</script>	<ul class="mobile-links">
+		<li class="mobile-links__item">
+			<a href="en/all-artists.html" class="mobile-links__link">All artists</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="en/how-it-works.html" class="mobile-links__link">How it works</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="index.html" class="mobile-links__link">About</a>
+		</li><li class="mobile-links__item">
+			<a href="index.html" class="mobile-links__link">Contact</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="index.html" class="mobile-links__link">Press kit</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="en/brands.html" class="mobile-links__link">Brands</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="index.html" class="mobile-links__link">Terms</a>
+		</li><li class="mobile-links__item">
+			<a href="index.html" class="mobile-links__link">Privacy</a>
+		</li>
+	</ul>
+	<footer class="footer">
+		<div class="footer__col footer__col--1">
+			<ul class="navigation">
+				<li class="navigation__item">
+					<a href="index.html" class="navigation__link">Press kit</a>
+				</li><li class="navigation__item">
+					<a href="index.html" class="navigation__link">About</a>
+				</li><li class="navigation__item">
+					<a href="index.html" class="navigation__link">Contact</a>
+				</li>
+			</ul>
+		</div>
+		<div class="footer__col footer__col--2">
+			<ul class="social-list">
+				<li class="social-list__item">
+					<a href="https://www.facebook.com/Fantubeme-261947960928644/" class="social-list__link social-list__link--facebook" target="_blank"></a>
+				</li><li class="social-list__item">
+					<a href="https://www.instagram.com/fantube.me/" class="social-list__link social-list__link--instagram" target="_blank"></a>
+				</li><li class="social-list__item">
+					<a href="https://www.youtube.com/user/crashcouple" class="social-list__link social-list__link--youtube" target="_blank"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="footer__col footer__col--3">
+			<ul class="credentials__list">
+			<li class="credentials__item hidden-xs">
+				<a href="index.html" class="credentials__link"><span class="hidden-sm">Terms & Conditions</span></a>
+			</li><li class="credentials__item hidden-xs">
+				<a href="index.html" class="credentials__link"><span class="hidden-sm">Privacy Policy</span></a>
+			</li><li class="credentials__item hidden-xs">&copy; 2019</li><li class="credentials__item">
+									<div class="language">
+						<select class="language__select">
+							<option value="/de/" >DE</option>
+							<option value="/en/" selected>EN</option>
+							<option value="/es/" >ES</option>
+							<option value="/fr/" >FR</option>
+							<option value="/it/" >IT</option>
+							<option value="/nl/" >NL</option>
+							<option value="/pt/" >PT</option>
+						</select>
+					</div>
+							</li>
+		</ul>
+		</div>
+		<script>
+			$(function(){
+				// bind change event to select
+				$('.language__select').on('change', function () {
+					var url = $(this).val(); // get selected value
+					if (url) { // require a URL
+						 // redirect
+					}
+					return false;
+				});
+			});
+		</script>
+	</footer>
+</body>
+</html>
