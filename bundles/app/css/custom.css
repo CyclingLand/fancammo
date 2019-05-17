@@ -1,0 +1,6 @@
+@charset "utf-8";
+/* CSS Document */
+
+.content--gradient {
+	background:  linear-gradient(-90deg, transparent, #000),url(../images/crowd.jpg) !important;
+}
