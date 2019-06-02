@@ -1,0 +1,315 @@
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+		<title>Hoe het werkt - Fancammo</title>
+		<link rel="icon" href="../bundles/app/images/favicon.png" type="image/png"/>
+		<link href="../bundles/app/css/styles.css" rel="stylesheet">
+		<link href="bundles/app/css/custom.css" rel="stylesheet">
+		<meta name="description" content="Met Fancammo kunnen mensen over de hele wereld een fan verrassen met een persoonlijk videoboodschap van zijn / haar favoriete artiest en zo het bewustzijn en de fondsenwerving voor een goed doel vergroten. Elke artiest kan de prijs van een video kiezen: gratis, vast of online en bepaalt welk goed doel hij / zij wil ondersteunen."/>
+		<meta property="og:title" content="Hoe het werkt - Fancammo" />
+		<meta property="og:url" content="https://www.fancammo.nl/nl/hoe-het-werkt">
+				<meta property="og:site_name" content="Fancammo" />
+			<link rel="alternate" href="../en/how-it-works.html" hreflang="en" />
+			<link rel="alternate" href="/nl/how-it-works" hreflang="nl" />
+			<link rel="alternate" href="/de/how-it-works" hreflang="de" />
+			<link rel="alternate" href="/pt/how-it-works" hreflang="pt" />
+			<link rel="alternate" href="/fr/how-it-works" hreflang="fr" />
+			<link rel="alternate" href="/it/how-it-works" hreflang="it" />
+			<link rel="alternate" href="/es/how-it-works" hreflang="ed" />
+							<script src="../ajax/libs/jquery/1-11-2/jquery.min.js"></script>
+			<script src="../bundles/app/js/scripts.min.js"></script>
+			<script src="../bundles/app/js/socket.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+		var userLang = navigator.language || navigator.userLanguage;
+		function setCookie(cname, cvalue, exdays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			var expires = "expires="+d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+		var localeChecked = getCookie("localeChecked");
+							if(userLang == 'nl' && localeChecked == ''){
+				setCookie("localeChecked", 'true', 1);
+			}
+							if(userLang == 'de' && localeChecked == ''){
+				setCookie("localeChecked", 'true', 1);
+			}
+				if(userLang == 'fr' && localeChecked == ''){
+			setCookie("localeChecked", 'true', 1);
+		}
+						if(userLang == 'it' && localeChecked == ''){
+			setCookie("localeChecked", 'true', 1);
+		}
+						if(userLang == 'es' && localeChecked == ''){
+			setCookie("localeChecked", 'true', 1);
+		}
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+							(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+						m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+						ga('create', 'UA-100078581-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+					<nav class="topbar">
+				<div class="topbar__col topbar__col--1">
+					<a href="../en.html" class="logo">
+						<img src="../bundles/app/images/logo.svg" class="logo">
+					</a>
+				</div>
+				<div class="topbar__col topbar__col--2">
+					<form action="../index.html" class="search__form" method="post">
+						<input type="search" name="search" class="search__input" placeholder="Zoeken" value="">
+						<button type="submit" class="search__button"></button>
+					</form>
+				</div>
+				<div class="topbar__col topbar__col--3">
+					<ul class="navigation">
+					    <li class="navigation__item"><a class="navigation__link " href="../index.html">Home</a></li>
+						<li class="navigation__item"><a class="navigation__link navigation__link--active" href="../nl/hoe-het-werkt.html">Hoe het werkt</a></li>
+						<li class="navigation__item"><a class="navigation__link " href="../nl/alle-artiesten.html">Alle artiesten</a></li>
+						<li class="navigation__item"><a class="navigation__link " href="../nl/charities.html">Charities</a></li>
+													<li class="navigation__item navigation__item--mobile">
+								<a href="../en/user/login.html" class="navigation__button navigation__button--login">Login</a>
+							</li>
+											</ul>
+				</div>
+			</nav>
+	<section class="content content--gradient">
+	<div class="content__cover" style="background-image:url(../bundles/app/images/crowd.jpg)">
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+				<div class="player__wrapper player__wrapper--wide">
+							<video class="artist__video video" controls requestFullscreen loop style="background-image:url('../bundles/app/images/howitworks.jpg')">
+							  <source src="/bundles/app/images/howitworks.mp4" type="video/mp4">
+							</video>
+							<div class="controls video-controls" data-state="hidden">
+								<button type="button" data-state="play" class="artist__video-button video-playpause"></button>
+								<div class="progress">
+									<progress class="video-progress" value="0" min="0">
+										<span class="progress-bar"></span>
+									</progress>
+								</div>
+								<button type="button" data-state="mute" class="artist__video-mute video-mute"></button>
+							</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 text-center">
+				<div class="page-title">
+					<h1 class="small">Het is allemaal eenvouding bij Fancammo</h1>
+					<p>Fancammo is een Personal Media Platform waarmee artiesten over de hele wereld fans kunnen verrassen met een persoonlijke video en zo het bewustzijn vergroten en geld inzamelen voor een goed doel.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="content content--no-padding-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<h3>Hoe het werkt</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="steps">
+					<div class="step__col step__col--wide">
+						<div class="step__item step__item--1"></div>
+						<div class="step__title">Zoek artiest</div>
+						<p class="step__paragraph">Kies je favoriete artiest op het platform. In het geval dat uw persoonlijke held ontbreekt, laat het ons weten en we nemen contact met hem op!</p>
+					</div>
+					<div class="step__col step__col--wide">
+						<div class="step__item step__item--2"></div>
+						<div class="step__title">Bieden of kopen</div>
+						<p class="step__paragraph">De artiest bepaalt of je kunt bieden op de video of kan worden verkocht voor een vaste prijs.</p>
+					</div>
+					<div class="step__col step__col--wide">
+						<div class="step__item step__item--3"></div>
+						<div class="step__title">Voltooi verzoek</div>
+						<p class="step__paragraph">Na het voltooien van de betaling, kunt u alle benodigde faninformatie (inclusief een foto) invullen, zodat de artiest een geweldige persoonlijke video kan maken.</p>
+					</div>
+					<div class="step__col step__col--wide">
+						<div class="step__item step__item--4"></div>
+						<div class="step__title">Ontvang video</div>
+						<p class="step__paragraph">Binnen de opgegeven levertermijn ontvangt u de persoonlijke video per e-mail.</p>
+					</div>
+					<div class="step__col step__col--wide">
+						<div class="step__item step__item--5"></div>
+						<div class="step__title">Neem fanreactie op</div>
+						<p class="step__paragraph">Wanneer je de video voor de eerste keer aan de fan laat zien, moet je een (verticale) video van die reactie opnemen en deze terugsturen naar de artiest via remco@fancammo.nl.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-offset-3 col-sm-6 text-center mobile-margin">
+				<h3>💪 Mis je je persoonlijke held?</h3>
+<p>Vraag de artiest hier en we nemen contact met hem/haar op</p>
+<!--<ul class="image-stack">
+					<li class="image-stack__item" style="background-image:url(../bundles/app/images/demo/armin.jpg)"></li>
+					<li class="image-stack__item" style="background-image:url(../bundles/app/images/demo/jochem.jpg)"></li>
+					<li class="image-stack__item" style="background-image:url(../bundles/app/images/demo/lil.jpg)"></li>
+					<li class="image-stack__item" style="background-image:url(../bundles/app/images/demo/verstappen.jpg)"></li>
+				</ul>
+				<a href="/en/hero-missing" class="button button--ghost">Let us know</a>-->
+	<a href="../en/user/login.html" class="artist__button artist__button--login">Login</a>
+<script>
+	$(function() {
+		$( "#let_us_know" ).click(function() {
+			if($('#artistName').val() == ''){
+				return;
+			}
+			var form = $(this).closest( "form" );
+			var url = $(form).attr('action');
+			$.post( url, $( form ).serialize(), function( data ) {
+				if(data.success == false){
+					$.each(data.message, function( index, value ) {
+						$(form).find('.card__error').html('⚠️ &nbsp;'+value);
+					});
+				}else{
+					$('#artistName').val('');
+					$(form).find('.card__success').html('✅ &nbsp;'+data.message);
+				}
+			}, "json");
+		});
+	});
+</script>			</div>
+			<!-- <div class="col-xs-12 col-sm-6 text-center">
+				<h3>📰 Stay tuned!</h3>
+				<p>We will let you know when new artists join us.</p>
+				<form class="form form--content" action="/en/user/staytuned" method="post" onkeypress="return event.keyCode != 13;">
+					<div class="card__error"></div><div class="card__success"></div>
+					<input class="form__input" type="email" name="stay_tuned_email" id="stay_tuned_email" placeholder="i.e. example@mymail.com">
+					<a class="button button--ghost" id="staytunedBtn">Subscribe</a>
+				</form>
+			</div> -->
+		</div>
+	</div>
+</section>
+<script>
+	$(function() {
+		$( "#staytunedBtn" ).click(function() {
+			if($('#stay_tuned_email').val() == ''){
+				return;
+			}
+			var form = $(this).closest( "form" );
+			var url = $(form).attr('action');
+			$.post( url, $( form ).serialize(), function( data ) {
+				console.log(data);
+				if(data.success == false){
+					$.each(data.message, function( index, value ) {
+						$(form).find('.card__error').html('⚠️ &nbsp;'+value);
+					});
+				}else{
+					$(form).find('.card__success').html('✅ &nbsp;'+data.message);
+				}
+				}, "json");
+			});
+	});
+</script>	<ul class="mobile-links">
+		<li class="mobile-links__item">
+			<a href="../nl/alle-artiesten.html" class="mobile-links__link">Alle artiesten</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="../nl/hoe-het-werkt.html" class="mobile-links__link">Hoe het werkt</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="../index.html" class="mobile-links__link">Over Ons</a>
+		</li><li class="mobile-links__item">
+			<a href="../index.html" class="mobile-links__link">Contact</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="../index.html" class="mobile-links__link">Pers</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="../en/brands.html" class="mobile-links__link">Brands</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="../index.html" class="mobile-links__link">Algemene Voorwaarden</a>
+		</li><li class="mobile-links__item">
+			<a href="../index.html" class="mobile-links__link">Privacybeleid</a>
+		</li>
+	</ul>
+	<footer class="footer">
+		<div class="footer__col footer__col--1">
+			<ul class="navigation">
+				<li class="navigation__item">
+					<a href="../index.html" class="navigation__link">Pers</a>
+				</li><li class="navigation__item">
+					<a href="../index.html" class="navigation__link">Over Ons</a>
+				</li><li class="navigation__item">
+					<a href="../index.html" class="navigation__link">Contact</a>
+				</li>
+			</ul>
+		</div>
+		<div class="footer__col footer__col--2">
+			<ul class="social-list">
+				<li class="social-list__item">
+					<a href="https://www.facebook.com/Fantubeme-261947960928644/" class="social-list__link social-list__link--facebook" target="_blank"></a>
+				</li><li class="social-list__item">
+					<a href="https://www.instagram.com/fantube.me/" class="social-list__link social-list__link--instagram" target="_blank"></a>
+				</li><li class="social-list__item">
+					<a href="https://www.youtube.com/user/crashcouple" class="social-list__link social-list__link--youtube" target="_blank"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="footer__col footer__col--3">
+			<ul class="credentials__list">
+			<li class="credentials__item hidden-xs">
+				<a href="../index.html" class="credentials__link"><span class="hidden-sm">Algemene Voorwaarden</span></a>
+			</li><li class="credentials__item hidden-xs">
+				<a href="../index.html" class="credentials__link"><span class="hidden-sm">Privacybeleid</span></a>
+			</li><li class="credentials__item hidden-xs">&copy; 2019</li><li class="credentials__item">
+									<div class="language">
+						<select class="language__select">
+							<option value="/de/how-it-works" >DE</option>
+							<option value="/en/how-it-works" selected>EN</option>
+							<option value="/es/how-it-works" >ES</option>
+							<option value="/fr/how-it-works" >FR</option>
+							<option value="/it/how-it-works" >IT</option>
+							<option value="/nl/how-it-works" >NL</option>
+							<option value="/pt/how-it-works" >PT</option>
+						</select>
+					</div>
+							</li>
+		</ul>
+		</div>
+		<script>
+			$(function(){
+				// bind change event to select
+				$('.language__select').on('change', function () {
+					var url = $(this).val(); // get selected value
+					if (url) { // require a URL
+						 // redirect
+					}
+					return false;
+				});
+			});
+		</script>
+	</footer>
+</body>
+</html>

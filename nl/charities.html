@@ -1,0 +1,558 @@
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+		<title>Charities - Fantube</title>
+		<link rel="icon" href="../bundles/app/images/favicon.png" type="image/png"/>
+		<link href="../bundles/app/css/styles.css" rel="stylesheet">
+		<link href="../bundles/app/css/custom.css" rel="stylesheet">
+		<meta name="description" content="Fantube enables people worldwide to surprise a fan with a personalized video message from his/her favorite artist and by doing so, to raise awareness and funds for a charity. Each artist can choose the price of a video: free, fixed or online auction and decides which charity he/she wants to support."/>
+		<meta property="og:title" content="Charities - Fantube" />
+		<meta property="og:url" content="https://www.fantube.me/en/charities">
+				<meta property="og:site_name" content="Fantube" />
+			<link rel="alternate" href="../en/charities.html" hreflang="en" />
+			<link rel="alternate" href="/nl/charities" hreflang="nl" />
+			<link rel="alternate" href="/de/charities" hreflang="de" />
+			<link rel="alternate" href="/pt/charities" hreflang="pt" />
+			<link rel="alternate" href="/fr/charities" hreflang="fr" />
+			<link rel="alternate" href="/it/charities" hreflang="it" />
+			<link rel="alternate" href="/es/charities" hreflang="ed" />
+							<script src="../ajax/libs/jquery/1-11-2/jquery.min.js"></script>
+			<script src="../bundles/app/js/scripts.min.js"></script>
+			<script src="../bundles/app/js/socket.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+		var userLang = navigator.language || navigator.userLanguage;
+		function setCookie(cname, cvalue, exdays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			var expires = "expires="+d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+		var localeChecked = getCookie("localeChecked");
+							if(userLang == 'nl' && localeChecked == ''){
+				setCookie("localeChecked", 'true', 1);
+			}
+							if(userLang == 'de' && localeChecked == ''){
+				setCookie("localeChecked", 'true', 1);
+			}
+				if(userLang == 'fr' && localeChecked == ''){
+			setCookie("localeChecked", 'true', 1);
+		}
+						if(userLang == 'it' && localeChecked == ''){
+			setCookie("localeChecked", 'true', 1);
+		}
+						if(userLang == 'es' && localeChecked == ''){
+			setCookie("localeChecked", 'true', 1);
+		}
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+							(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+						m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+						ga('create', 'UA-100078581-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+					<nav class="topbar">
+				<div class="topbar__col topbar__col--1">
+					<a href="../en.html" class="logo">
+						<img src="../bundles/app/images/logo.svg" class="logo">
+					</a>
+				</div>
+				<div class="topbar__col topbar__col--2">
+					<form action="../index.html" class="search__form" method="post">
+						<input type="search" name="search" class="search__input" placeholder="Search artist" value="">
+						<button type="submit" class="search__button"></button>
+					</form>
+				</div>
+				<div class="topbar__col topbar__col--3">
+					<ul class="navigation">
+						<li class="navigation__item"><a class="navigation__link " href="../en/how-it-works.html">How it works</a></li>
+						<li class="navigation__item"><a class="navigation__link " href="../en/brands.html">Brands</a></li>
+						<li class="navigation__item"><a class="navigation__link " href="../en/all-artists.html">All artists</a></li>
+						<li class="navigation__item"><a class="navigation__link navigation__link--active" href="../en/charities.html">Charities</a></li>
+													<li class="navigation__item navigation__item--mobile">
+								<a href="../en/user/login.html" class="navigation__button navigation__button--login">Login</a>
+							</li>
+											</ul>
+				</div>
+			</nav>
+	<section class="content content--gradient">
+	<div class="content__cover" style="background-image:url(../bundles/app/images/crowd.jpg)">
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 text-center">
+				<div class="page-title">
+					<h1>Our charities</h1>
+					<p>We help people by connecting, collecting & converting.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="charities">
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/profile-pic-WHITE.jpg')"></div>
+						<h4>Make A Wish</h4>
+						<p>Make a Wish makes sure that dreams come true for children (between 3 and 18 years old) with a life-threatening disease.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/logo-kika1-1-wpcf_600x600.png')"></div>
+						<h4>KiKa</h4>
+						<p>The Foundation KiKa is a Dutch charity foundation that brings in fundings solely for research to childhood cancers.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/warchild-170.png')"></div>
+						<h4>War Child</h4>
+						<p>Children have the right to grow up in peace, free from fear and violence. To develop their full potential and become the person they want to be. War Child is a charity that helps children affected by conflict to build a better future for both themselves and their communities. No child should be part of war. Ever.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="http://www.warchild.org/our-approach" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/1358869683_avatar-evdsf-socialmedia.png')"></div>
+						<h4>Edwin van der Sar Foundation</h4>
+						<p>The Edwin van der Sar Foundation supports people with brain damage. Through sport- and physical projects we aim to improve care and rehabilitation.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/feyenooord-logo.png')"></div>
+						<h4>Feyenoord Foundation</h4>
+						<p>Feyenoord plays a major role in society. Through the Feyenoord Foundation, societal organizations and businesses associate themselves with the social-social activities of our club.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/najib-foundation1.png')"></div>
+						<h4>Najib Foundation</h4>
+						<p>The Najib Foundation was founded by Najib Amhali, who actively serves as an ambassador to the Najib Foundation. The foundation is committed to help vulnerable children so that they can participate in society again.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/Free-a-Girl.jpg')"></div>
+						<h4>Free a Girl</h4>
+						<p>Free a Girl is dedicated to freeing young girls from forced prostitution and prosecuting the offenders. In the past 8 years we have contributed to the liberation of 3802 girls from brothels in Asia.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/touzani - right one.png')"></div>
+						<h4>Touzani Foundation</h4>
+						<p>We maken de kinderen fitter, leren ze om hun talenten te ontwikkelen, doelen na te streven en kansen te grijpen, ontwikkelen hun sociale vaardigheden en laten zich onderdeel voelen van een groter geheel. Soufiane Touzani, zijn netwerk en de inzet van media vormen de basiselementen van onze aanpak.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="http://www.touzanifoundation.nl/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/greenpeace.png')"></div>
+						<h4>Greenpeace</h4>
+						<p>Greenpeace is an independent global campaigning organisation that acts to change attitude and behaviour, to protect and conserve te environment and to promote peace.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/Muziekidss.png')"></div>
+						<h4>Muziekids</h4>
+						<p>A Muziekids Studio as a beating heart of the hospital. Muziekids turns a smile on the face of every sick child.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/nierstichting.jpg')"></div>
+						<h4>Nierstichting</h4>
+						<p>Nierstichting</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/kanjerwens_1489165236_280.jpg')"></div>
+						<h4>Stichting Kanjer Wens</h4>
+						<p>Stichting Kanjer Wens is an Foundation who fulfil Wishes from seriously ill children or children who were seriously ill. These Wishes can be everything. Our work is done with only volunteers, nobody get paid within our Foundation.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="https://kanjerwens.nl/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/kinderhulp.png')"></div>
+						<h4>Nationaal Fonds Kinderhulp</h4>
+						<p>More than 50 years is the Nationaal Fonds Kinderhulp active in the Netherlands to fight financial poverty among children. The charity supports children with small financial benefits which are focused on practical improvements, such as organising a sport facility, small holidays, a bike or computer.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/WNF.jpg')"></div>
+						<h4>WNF</h4>
+						<p>WNF's goal is to establish a world where people all over the world can live in harmony with the nature.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="https://www.wnf.nl/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/ronaldmcdonald.jpg')"></div>
+						<h4>Ronald McDonald Kinderfonds</h4>
+						<p>Ronald McDonald Kinderfonds is since 1987 active. The foundation is active all over the world with their Ronald McDonald houses, who provide shelter for parents and children during their stay in the hospital</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/DTV 150.png')"></div>
+						<h4>Stichting Durf Te Vragen</h4>
+						<p>Stichting Durf te Vragen is opgericht door Dylan Haegens, samen met zijn vriendin Marit Brugman. De stichting zet zich in om psychische problemen bij kinderen en jongeren beter bespreekbaar te maken. Hiermee willen zij jongeren met een psychisch probleem helpen en stimuleren om de eerste stap naar hulpverlening te zetten. Zelf hebben Dylan en Marit beiden ervaring met de problematiek waar de stichting zich voor inzet.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="http://www.stichtingdtv.nl/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/plastic soup foundation - right one.png')"></div>
+						<h4>Plastic Soup Foundation</h4>
+						<p>Plastic Soup Foundation has made it it’s mission to prevent plastic waste ending up in our ocean. Through fun and witty campaigns, news articles and social media, they get people aware of this massive environmental problem. Furthermore they provide educational programs for schools and they stimulate all possible innovative solutions which help tackle the causes of plastic soup at source.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="https://www.plasticsoupfoundation.org/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/uniceff - right one.jpg')"></div>
+						<h4>UNICEF</h4>
+						<p>UNICEF saves children’s lives, defends their rights, and helps them fulfill their potential. We never give up.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="https://www.unicef.org/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/STC- right one.jpg')"></div>
+						<h4>Save The Children Federation (Harvey)</h4>
+						<p>Fundraise for victims from hurricane Harvey.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="http://www.savethechildren.org" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/dirk kuyt foudnation - right one.jpg')"></div>
+						<h4>Dirk Kuyt Foundation</h4>
+						<p>The Dirk Kuyt Foundation ​was founded in 2005 to ​allow people wit​h​ disabilities to play sports. We organize and support more than 100 events and projects every year. Playing sports improves both health and social life of the people who participate.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="https://www.dirkkuytfoundation.nl/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/fuck cancer - right one.png')"></div>
+						<h4>Fuck Cancer</h4>
+						<p>Fuck Cancer is dedicated to early detection, prevention and providing support to those affected by cancer. We do this through digital initiatives, programs, events and funding research that will change the way people think and talk about cancer and ultimately improve health outcomes.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="https://www.letsfcancer.com/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/rode kruissss.jpg')"></div>
+						<h4>Rode Kruis</h4>
+						<p>Volledig omgewaaide palmbomen, huizen zonder dak, overal puin. Orkaan Irma laat een ravage van ongekende omvang achter op de Caribische eilanden. Vooral Sint Maarten heeft de volle laag gehad. Nederlanders gaven al 3,2 miljoen euro voor slachtoffers van orkaan Irma, maar meer hulp is nodig.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="https://www.rodekruis.nl/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/Cliniclowns_logo-belgie-final.png')"></div>
+						<h4>Cliniclowns Belgium</h4>
+						<p>Cliniclowns have been visible in Belgium hospitals since 1994. The team of Cliniclowns exists of 18 clowns who visit children hospitals on a daily basis. The clowns bring a positive atmosphere and a smile into the hospitals.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="http://www.cliniclowns.be/NL/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/spieren voor spieren logofinal.jpg')"></div>
+						<h4>Spieren voor Spieren</h4>
+						<p>Spieren voor Spieren is én heeft een goed doel: het onmogelijke mogelijk maken voor kinderen met een spierziekte.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/knotonmyplanet final.png')"></div>
+						<h4>#knotonmyplanet</h4>
+						<p>#knotonmyplanet is a campaign to support the Elephant Crisis Fund, with 100% of every donation supporting a coalition of vetted organizations focused on one goal:
+to Save Elephants Now.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="http://www.knotonmyplanet.org/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('/uploads/charity_logo/')"></div>
+						<h4>none</h4>
+						<p>.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/SOS150.jpg')"></div>
+						<h4>SOS Children's Villages</h4>
+						<p>We build families for children in need, we help them shape their own futures, and we share in the development of their communities.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/DCS150.png')"></div>
+						<h4>Dutch Cancer Society (DCS)</h4>
+						<p>The Dutch Cancer Society(DCS) is determined to beat cancer as soon as possible. That’s why we fund and guide scientific research, influence policy, and share our knowledge about cancer and its treatment. We encourage our stakeholders and the public to do everything possible to help bring about the day when no-one else has to die of cancer. We’re getting there together.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="https://www.kwf.nl/english/pages/default.aspx" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/bundezverband.png')"></div>
+						<h4>Bundesverband Kinderhospiz</h4>
+						<p>Der Bundesverband Kinderhospiz vertritt zahlreiche stationäre und ambulante Kinderhospizeinrichtungen in Deutschland. Er setzt sich gesellschaftlich dafür ein, eine Öffentlichkeit für das Tabuthema „Kinder und Tod“ zu schaffen und betroffene Kinder und Familien aus dem sozialen Abseits zu holen.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="http://www.bundesverband-kinderhospiz.de/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/KWF.png')"></div>
+						<h4>KWF kanker bestrijding</h4>
+						<p>KWF Kankerbestrijding is vastberaden om kanker zo snel mogelijk te verslaan. Ons ideaal is een wereld waarin niemand meer sterft aan kanker. Ons doel: minder mensen met kanker, meer mensen die genezen en een betere kwaliteit van leven voor kankerpatiënten. Om dit te bereiken werven we fondsen waarmee we onderzoek naar kanker financieren en begeleiden.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/magic camp150.png')"></div>
+						<h4>Magicamp</h4>
+						<p>Suntem o tabără magică pentru copiii cu afectiuni oncologice, discret supravegheată de medici și personal de specialitate.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="http://magicamp.ro/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/Logo maison Adrien1.png')"></div>
+						<h4>Assocation Adrien</h4>
+						<p>« Un royaume féérique », « une maison de princes et de princesses » : c’est ce que méritent tous les enfants touchés par la maladie, ces petits héros qui luttent jour après jour sans jamais se plaindre. La Maison d’Adrien veut être ce lieu : un espace de rêve, une parenthèse magique qui a pour objectif d’améliorer le quotidien des enfants malades et de leurs parents. Un lieu pour tous.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="http://associationadrien.org/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/on.png')"></div>
+						<h4>Only Friends</h4>
+						<p>Sportsclub Only Friends is THE sportsclub for kids and youngsters with a disability.
+Only Friends offers 24 kinds of sports, 7 days a week in their own sportscentre, Friendship Sports Centre, in Amsterdam. Both the club as the sportscentre are very unique and, as far we know, there is no such a club or sportscentre around the globe.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/huu.jpg')"></div>
+						<h4>Human Rights Campaign</h4>
+						<p>HRC envisions an America where lesbian, gay, bisexual, transgender and queer people are ensured equality at home, at work and in every community.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/sikkelsel.png')"></div>
+						<h4>Het Sikkelcelfonds</h4>
+						<p>Het Sikkelcelfonds is opgericht in 2017 en wil meer aandacht genereren voor de oplossing van de sikkelcelziekte. Met behulp van donaties wil het Sikkelcelfonds baanbrekend, wetenschappelijk onderzoek financieren, om zo in de toekomst deze slopende en pijnlijke ziekte te genezen.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+																	<a href="http://hetsikkelcelfonds.nl/wat-wij-doen/over-de-stichting/" class="artist__arrow-list__link" target="_blank">Read more</a>
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/profile-default.jpg')"></div>
+						<h4>Dance4Life</h4>
+						<p>Dance4life is an international youth initiative to raise awareness and promote prevention of HIV/AIDS.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/Het Vergeten Kind.jpg')"></div>
+						<h4>Stichting Het Vergeten Kind</h4>
+						<p>Het Vergeten Kind zet zich in voor kinderen die opgroeien in een onveilige of instabiele situatie. Veel van deze kinderen kunnen noodgedwongen niet meer thuiswonen en groeien op in een opvanglocatie.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+										<div class="charity__col">
+						<div class="charity__logo" style="background-image:url('../uploads/charity_logo/Menatal.jpg')"></div>
+						<h4>Mental Health Foundation</h4>
+						<p>The Mental Health Foundation focuses on psychological diseases especially among young adults. We try to fight against the Taboo of depression among (young) adults and raise attention.</p>
+						<ul class="artist__arrow-list">
+							<li class="artist__arrow-list__item">
+															</li>
+						</ul>
+					</div>
+									</div>
+			</div>
+		</div>
+	</div>
+</section>
+	<ul class="mobile-links">
+		<li class="mobile-links__item">
+			<a href="../en/all-artists.html" class="mobile-links__link">All artists</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="../en/how-it-works.html" class="mobile-links__link">How it works</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="../index.html" class="mobile-links__link">About</a>
+		</li><li class="mobile-links__item">
+			<a href="../index.html" class="mobile-links__link">Contact</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="../index.html" class="mobile-links__link">Press kit</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="../en/brands.html" class="mobile-links__link">Brands</a>
+		</li>
+		<li class="mobile-links__item">
+			<a href="../index.html" class="mobile-links__link">Terms</a>
+		</li><li class="mobile-links__item">
+			<a href="../index.html" class="mobile-links__link">Privacy</a>
+		</li>
+	</ul>
+	<footer class="footer">
+		<div class="footer__col footer__col--1">
+			<ul class="navigation">
+				<li class="navigation__item">
+					<a href="../index.html" class="navigation__link">Press kit</a>
+				</li><li class="navigation__item">
+					<a href="../index.html" class="navigation__link">About</a>
+				</li><li class="navigation__item">
+					<a href="../index.html" class="navigation__link">Contact</a>
+				</li>
+			</ul>
+		</div>
+		<div class="footer__col footer__col--2">
+			<ul class="social-list">
+				<li class="social-list__item">
+					<a href="https://www.facebook.com/Fantubeme-261947960928644/" class="social-list__link social-list__link--facebook" target="_blank"></a>
+				</li><li class="social-list__item">
+					<a href="https://www.instagram.com/fantube.me/" class="social-list__link social-list__link--instagram" target="_blank"></a>
+				</li><li class="social-list__item">
+					<a href="https://www.youtube.com/user/crashcouple" class="social-list__link social-list__link--youtube" target="_blank"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="footer__col footer__col--3">
+			<ul class="credentials__list">
+			<li class="credentials__item hidden-xs">
+				<a href="../index.html" class="credentials__link"><span class="hidden-sm">Terms & Conditions</span></a>
+			</li><li class="credentials__item hidden-xs">
+				<a href="../index.html" class="credentials__link"><span class="hidden-sm">Privacy Policy</span></a>
+			</li><li class="credentials__item hidden-xs">&copy; 2019</li><li class="credentials__item">
+									<div class="language">
+						<select class="language__select">
+							<option value="/de/charities" >DE</option>
+							<option value="/en/charities" selected>EN</option>
+							<option value="/es/charities" >ES</option>
+							<option value="/fr/charities" >FR</option>
+							<option value="/it/charities" >IT</option>
+							<option value="/nl/charities" >NL</option>
+							<option value="/pt/charities" >PT</option>
+						</select>
+					</div>
+							</li>
+		</ul>
+		</div>
+		<script>
+			$(function(){
+				// bind change event to select
+				$('.language__select').on('change', function () {
+					var url = $(this).val(); // get selected value
+					if (url) { // require a URL
+						 // redirect
+					}
+					return false;
+				});
+			});
+		</script>
+	</footer>
+</body>
+</html>
